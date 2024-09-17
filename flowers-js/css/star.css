@@ -54,6 +54,27 @@ titulo{
         background-position: 0% 0%;
     }
 }
+.skyboxday{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgb(0, 0, 51), rgb(216, 180, 230), rgb(255, 192, 203));
+    position: relative;
+    overflow: hidden;
+    /*Animacion donde bajan los telones*/
+    background-size: 200% 200%;
+    animation-name: day_anim;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes day_anim {
+    100% {
+        background-position: -10% 100%;
+    }
+    0% {
+        background-position: 0% 0%;
+    }
+}
 
 /* ? Luna*/
 .moon{
@@ -64,6 +85,17 @@ titulo{
     height: 100px;
     width: 100px;
     box-shadow: -15px 15px 0 5px rgb(255, 226, 231) ;
+    border-radius: 50%;
+}
+
+/*? Sol (sun.html)*/
+
+.sun{
+    margin-top: 30px;
+    margin-left: 30%;
+    width: 150px;
+    height: 150px;
+    background: rgb(255, 136, 0);
     border-radius: 50%;
 }
 
