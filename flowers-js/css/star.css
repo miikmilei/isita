@@ -84,11 +84,68 @@ title_s{
 
 /*! Botones*/
 
-.botones{
+.botones {
     padding: 9px;
-    border-radius: 10px;
-    background-color: gray;
-    border-color: rgb(49, 49, 49);
+    border-radius: 80px;
+    background-color: transparent;
+    border: none;
+}
+
+.botones a{
+    background-color: #48484b;
+    padding: 9px;
+    border-radius: 80px;
+    -webkit-border-radius: 80px;
+    -moz-border-radius: 80px;
+    -ms-border-radius: 80px;
+    -o-border-radius: 80px;
+}
+
+.botones a:focus{
+    background-color: rgb(46, 46, 46);
+}
+
+/*! estrella*/
+
+#estrella {
+    top: 30%;
+    left: 30%;
+    position: absolute;
+    display: block;
+    color: rgb(255, 226, 231);
+    width: 0px;
+    height: 0px;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid rgb(255, 226, 231);
+    border-left: 100px solid transparent;
+    transform: rotate(35deg);
+}
+#estrella:before {
+    border-bottom: 80px solid rgb(255, 226, 231);
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -45px;
+    left: -65px;
+    display: block;
+    content: '';
+    transform: rotate(-35deg);
+}
+#estrella:after {
+    position: absolute;
+    display: block;
+    color: red;
+    top: 3px;
+    left: -105px;
+    width: 0px;
+    height: 0px;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid rgb(255, 226, 231);
+    border-left: 100px solid transparent;
+    transform: rotate(-70deg);
+    content: '';
 }
 
 /* ! se usara en el futuro
