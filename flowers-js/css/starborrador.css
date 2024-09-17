@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+.circle{
+    margin-top: 30px;
+    margin-left: 20px;
+    width: 150px;
+    height: 150px;
+    background: cornflowerblue;
+    border-radius: 50%;
+    
+    /*? propiedades de la animacion*/
+
+    animation-name: mov_div1;
+    animation-duration: 1s;
+    /*! quitar para enviar a produccion*/
+    animation-fill-mode: forwards;
+}
+
+@keyframes mov_div1{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+
+
+
+/*! Notas, quitar en debug a produccion*/
+
+/* ? Cambiar tamaños
+@keyframes mov_div1{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(5)
+    }
+}
+*/
