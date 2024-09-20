@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo corazon</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+        }
+        .fade-in {
+            animation: fadeIn 2s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .heart {
+            color: red;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="sad-face"><h1>😢</h1></div>
+        <div id="message" class="hidden">Contigo se van todas las tristezas y se da paso a un nuevo corazón</div>
+        <div id="heart" class="hidden heart">❤️</div>
+        
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(() => {
+                document.getElementById("sad-face").classList.add("hidden");
+                document.getElementById("message").classList.remove("hidden");
+                document.getElementById("message").classList.add("fade-in");
+            }, 2000);
+
+            setTimeout(() => {
+                document.getElementById("message").classList.add("hidden");
+                document.getElementById("heart").classList.remove("hidden");
+                document.getElementById("heart").classList.add("fade-in");
+            }, 5000);
+        });
+    </script>
+</body>
+</html>

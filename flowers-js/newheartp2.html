@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animación</title>
+    <style>
+        /*Arreglo*/
+        div{
+            position: relative;
+            z-index: 0; /* Este div estará debajo */
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+        }
+        .fade-in {
+            animation: fadeIn 2s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .heart {
+            color: red;
+            font-size: 50px;
+        }
+        #fecha {
+            animation: fechaup 2s 1s forwards;
+            position: relative;
+            z-index: 1; /* Este div estará debajo */
+        }
+
+        #fecha2{
+            animation: fechadown 2s 1s forwards;
+            position: relative;
+            z-index: 1; /* Este div estará debajo */
+        }
+        @keyframes fechaup {
+            from { transform: translateY(0); }
+            to { transform: translateY(-100px); }
+        }
+        @keyframes fechadown{
+            from {transform: translateY(0);} to {transform: translateY(-100px);}
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="sad-face"><h1>❤️</h1></div>
+        <div id="message1" class="hidden"><h1>Eres todo lo que busco en una chica</h1></div>
+        <div id="message2" class="hidden"><h1>Sabes mi niña, tu me quitas todas las tristezas</h1></div>
+        <div id="message3" class="hidden"><h1>Quiero vivir un futuro juntos, poder mirar el sol al atardecer juntos</h1></div>
+        <div id="fecha" class="hidden"><h1>Quiero viajar, y vivir una vida los dos pero lo mas importante es que sea</h1></div>
+        <div id="fecha2" class="hidden"><h1>Juntos<3</h1></div>
+        <div id="message5" class="hidden"><h1>Sabes, quiero que seas mi novia</h1></div>
+        <div id="message6" class="hidden"><h1>¿Quieres?</h1></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const elements = [
+                { id: "sad-face", delay: 2000 },
+                { id: "message1", delay: 5000 },
+                { id: "message2", delay: 8000 },
+                { id: "message3", delay: 11000 },
+                { id: "fecha", delay: 14000 },
+                { id: "fecha2", delay: 17000 },
+                { id: "message5", delay: 21000},
+                { id: "message6", delay: 25000}
+
+
+                
+            ];
+
+            setTimeout(function() {
+                window.location.href = "https://miikmilei.github.io/isareact";
+            }, 29000); // 5000 milisegundos = 5 segundos
+
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    if (index > 0 && !["fecha", "fecha2"].includes(elements[index - 1].id)) {
+                        document.getElementById(elements[index - 1].id).classList.add("hidden");
+                    }
+                    document.getElementById(el.id).classList.remove("hidden");
+                    document.getElementById(el.id).classList.add("fade-in");
+                }, el.delay);
+            });
+        });
+    </script>
+</body>
+</html>
